@@ -6,6 +6,7 @@ import {
   Select,
   TextField,
 } from "@material-ui/core";
+import { CustomSelect } from "../components/Custom-select";
 
 export const Formulaire = ({ handleChange, data }) => {
   return (
@@ -43,24 +44,14 @@ export const Formulaire = ({ handleChange, data }) => {
         value={data.password}
         onChange={e => handleChange(e, "password")}
       />
-      <InputLabel id="demo-simple-select-label">
-        Selectionner un profile
-      </InputLabel>
-      <Select
-        margin="dense"
+      <CustomSelect 
+        value={data.profil}
+        handleChange={handleChange}
         label="Profile"
-        fullWidth
-        value={data.profile}
-        onChange={e => handleChange(e, "profil")}
-        labelId="demo-simple-select-label"
-      >
-        <MenuItem value={{ id: 1, name: "Administrateur" }} key={0}>
-          Administrateur
-        </MenuItem>
-        <MenuItem value={{ id: 2, name: "User" }} key={1}>
-          User
-        </MenuItem>
-      </Select>
+        options={[{ id: 1, name: "Administrateur" },{ id: 2, name: "User" }]}
+        field="profil"
+        getOptionLabel={option => option.name}
+      />
       <TextField
         margin="dense"
         label="Email"

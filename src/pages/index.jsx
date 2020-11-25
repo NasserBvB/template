@@ -61,7 +61,7 @@ const rows = [
     profil: { id: 1, name: "admin" },
   },
 ];
-export default () => {
+export default function FirstComponent() {
   const [open, setOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState({
     id: null,
@@ -86,7 +86,17 @@ export default () => {
   const handlePageSizeChange = (data) => {
     console.log(data);
   };
-  const handleChange = ({ target: { value } }, type) => {
+  const handleChange = (e, type) => {
+    let value;
+    switch (type) {
+      case "profil":
+        value = e;
+        break;
+
+      default:
+        value = e.currentTarget.value;
+        break;
+    }
     setSelectedItem({ ...selectedItem, [type]: value });
   };
   const handleUpdate = () => {
