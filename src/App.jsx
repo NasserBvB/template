@@ -1,12 +1,16 @@
-import React from "react";
-import { Layout } from "./Layout";
+import React, { Suspense } from "react";
+import DashboardLayout from "./Layout/DashboardLayout";
 import FirstComponent from "./pages";
 function App() {
+  
+
   return (
     <div className="App">
-      <Layout>
-        <FirstComponent />
-      </Layout>
+      <Suspense fallback={<div>Loading...</div>}>
+        <DashboardLayout >
+          
+        </DashboardLayout>
+      </Suspense>
     </div>
   );
 }

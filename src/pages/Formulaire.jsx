@@ -1,9 +1,6 @@
 import React from "react";
 import {
   DialogContent,
-  InputLabel,
-  MenuItem,
-  Select,
   TextField,
 } from "@material-ui/core";
 import { CustomSelect } from "../components/Custom-select";
