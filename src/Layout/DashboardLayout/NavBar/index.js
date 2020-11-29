@@ -13,6 +13,8 @@ import MailIcon from "@material-ui/icons/Mail";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import TopBar from "../TopBar";
+import { IconButton } from "@material-ui/core";
+import { Home } from "@material-ui/icons";
 
 const drawerWidth = 240;
 
@@ -99,9 +101,12 @@ function NavBar(props) {
     <div className={classes.root}>
       <CssBaseline />
       <TopBar classes={classes} handleDrawerToggle={handleDrawerToggle} />
-      <nav className={classes.drawer} aria-label="mailbox folders">
+      <nav
+        className={classes.drawer}
+        aria-label="mailbox folders"
+        title="React app"
+      >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        
         <Hidden smUp implementation="css">
           <Drawer
             container={container}
@@ -128,12 +133,29 @@ function NavBar(props) {
             variant="permanent"
             open
           >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {/**
+                You can put here your icon for the app
+              */}
+              <IconButton>
+                <Home color="secondary" fontSize="large" />
+              </IconButton>
+            </div>
             {drawer}
           </Drawer>
         </Hidden>
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
+        {/**
+          You can put here your body
+        */}
         <Typography paragraph>Welcome</Typography>
       </main>
     </div>

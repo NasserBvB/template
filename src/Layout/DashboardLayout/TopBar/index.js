@@ -7,6 +7,7 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
+import { Home } from "@material-ui/icons";
 
 const TopBar = ({ classes, handleDrawerToggle }) => {
   return (
@@ -24,7 +25,9 @@ const TopBar = ({ classes, handleDrawerToggle }) => {
         <Typography variant="h6" noWrap>
           Responsive Template
         </Typography>
-        <Avatar />
+        <IconButton>
+          <Avatar />
+        </IconButton>
       </Toolbar>
     </AppBar>
   );
