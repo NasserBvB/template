@@ -101,6 +101,7 @@ function NavBar(props) {
       <TopBar classes={classes} handleDrawerToggle={handleDrawerToggle} />
       <nav className={classes.drawer} aria-label="mailbox folders">
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        
         <Hidden smUp implementation="css">
           <Drawer
             container={container}
