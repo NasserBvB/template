@@ -100,6 +100,7 @@ function NavBar(props) {
           <Drawer
             container={container}
             variant="temporary"
+            title="This is a title"
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
             open={mobileOpen}
             onClose={handleDrawerToggle}
