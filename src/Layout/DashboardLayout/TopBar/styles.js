@@ -6,3 +6,7 @@ const TopBarWrapper = styled.div`
     align-items: center
 `
 export default TopBarWrapper;
+
+export const AvatarWrapper = styled.div`
+    text-align: right;
+`

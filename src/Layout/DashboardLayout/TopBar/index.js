@@ -8,9 +8,9 @@ import {
 import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useTranslation } from "react-i18next";
-import { Chip, Switch, Grid } from "@material-ui/core";
+import { Chip, Switch, Grid, Avatar } from "@material-ui/core";
 import { LanguageRounded } from "@material-ui/icons";
-import TopBarWrapper from "./styles";
+import TopBarWrapper, { AvatarWrapper } from "./styles";
 
 const TopBar = ({ classes, handleDrawerToggle }) => {
   const { i18n } = useTranslation();
@@ -19,7 +19,7 @@ const TopBar = ({ classes, handleDrawerToggle }) => {
   };
   return (
     <AppBar position="fixed" className={classes.appBar}>
-      <Toolbar>
+      <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
         <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -29,21 +29,10 @@ const TopBar = ({ classes, handleDrawerToggle }) => {
         >
           <MenuIcon />
         </IconButton>
-        <TopBarWrapper>
-          <Typography variant="h6" noWrap>
-            Responsive Template
-          </Typography>
-
-          <Typography>
-            <Switch variant="outlined" onClick={handleChangeLanguage}></Switch>
-            <Chip
-              icon={<LanguageRounded />}
-              label={`${i18n.languages[0].toUpperCase()}`}
-              color="secondary"
-              variant="outlined"
-            />
-          </Typography>
-        </TopBarWrapper>
+        <Typography variant="h6" noWrap>
+          Responsive Template
+        </Typography>
+        <Avatar />
       </Toolbar>
     </AppBar>
   );
